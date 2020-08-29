@@ -15,6 +15,9 @@ def longest_substring(string: str):
         if not string[j] in my_set:
             my_set.add(string[j])
             j += 1
+
+            # finding max of max_count and j-i (not only j), because set will not add the repeating character
+            # but we need to keep track of max_count, that it should not increment falsely
             max_count = max(max_count, j-i)
 
         else:
@@ -26,4 +29,4 @@ def longest_substring(string: str):
 
 
 if __name__ == '__main__':
-    print(longest_substring("abbcded"))
+    print(longest_substring("mabca"))
